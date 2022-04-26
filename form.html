@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ask Us | Patient Appointment Form</title>
+  
+  <!-- Bootstrap 5.1.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/form.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/form.js" defer></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+
+</head>
+
+<body>
+  <!-- display if JS is disabled  -->
+  <div id="noscript-warning" title="Please enable JavaScript from browser settings or use different browser.">
+    <p style="margin-bottom: 0px;">This Website works best with
+      JavaScript enabled.</p>
+  </div>
+  <!-- end of noscript div -->
+  <h1 class="heading pt-4">Patient Appointment Form</h1>
+  <form class="row g-3" method="post" autocomplete="off">
+    <h2>Details of the Patient</h2>
+    <div class="mb-3">
+      <label for="formGroupExampleInput" class="form-label">Name of the Patient</label>
+      <input type="text" class="form-control" id="formGroupExampleInput" required placeholder="Enter Your name"
+        onkeyup="nameValid()" autocomplete="off" maxlength="45">
+      <!--for showing error-->
+      <section class="text-danger" id="errorName"></section>
+    </div>
+    <div class="mb-3">
+      <label for="formGroupExampleInput2" class="form-label">Enter Father Name</label>
+      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter Your Fathers Name"
+        onkeyup="fnameValid()" required autocomplete="off" maxlength="45">
+      <!--for showing error-->
+      <section class="text-danger" id="errorfName"></section>
+    </div>
+    <div class="mb-3">
+      <select class="form-select" aria-label="Select your gender" required>
+        <option selected disabled>--Select your Gender--</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="others">Others</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="dob" class="form-label">Date of Birth</label>
+      <input type="date" class="form-control" id="dob" required>
+    </div>
+    <div class="col-md-8">
+      <label for="inputEmail4" class="form-label">Email</label>
+      <input type="email" class="form-control" id="inputEmail4" placeholder="Enter Your Email ID" onkeyup="emailValid()"
+        required maxlength="45">
+      <!--Showing error-->
+      <section class="text-danger" id="errorEmail"></section>
+    </div>
+    <div class="col-md-4">
+      <!-- dyanamic country code select -->
+      <label for="phone" class="form-label">Phone</label>
+      <input type="tel" id="phone" class="form-control" required>
+      <!--Showing error-->
+      <section class="text-danger" id="errorPhone"></section>
+    </div>
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Address Line 1</label>
+      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" minlength="3" maxlength="55"
+        required autocomplete="off">
+    </div>
+    <div class="col-12">
+      <label for="inputAddress2" class="form-label">Address Line 2</label>
+      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" required
+        autocomplete="off" minlength="3" maxlength="55">
+    </div>
+    <div class="col-md-6">
+      <label for="inputCity" class="form-label">City/Town/Village</label>
+      <input type="text" class="form-control" id="inputCity" placeholder="City/Town/Village" minlength="3"
+        maxlength="30" required autocomplete="off">
+    </div>
+    <div class="col-md-4">
+      <label for="inputState" class="form-label">State</label>
+      <select name="inputState" id="inputState" class="form-select" aria-placeholder="Your State">
+        <!-- <option selected>--Your State--</option> -->
+      </select>
+    </div>
+    <div class="col-md-2">
+      <label for="inputZip" class="form-label">Zip</label>
+      <input type="tel" class="form-control" id="inputZip" placeholder="Zip Code" required autocomplete="off"
+        minlength="6" maxlength="6">
+    </div>
+    <h2>Choose the Doctor</h2>
+    <div class="mb-3">
+      <select class="form-select" aria-label="Select the Doctor" required>
+        <option selected disabled>--Select the Doctor--</option>
+        <option value="Santu">Santu De</option>
+        <option value="Shruti ">Shruti Mayank</option>
+        <option value="Abhishek">Abhishek Kumar</option>
+        <option value="Kashish">Kashish Gupta</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="formGroupExampleDesies" class="form-label">Disease Name</label>
+      <input type="text" class="form-control" id="inputDesies" required
+        placeholder="Enter Disease/Disorder/Syndrome Name" minlength="3" maxlength="65" autocomplete="off">
+
+      <label for="date-time" class="form-label">Select your date</label>
+      <input type="date" class="form-control" id="dateControl" required>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck" required>
+        <label class="form-check-label" for="gridCheck">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem at enim a quae corrupti amet sed ut nulla
+          deserunt dolores quibusdam, officiis, odio voluptatem eaque veritatis? Eaque sunt sint possimus. </label>
+      </div>
+    </div>
+    <div class="submit">
+      <button type="submit" class="btn " id="b1">Submit</button>
+      <button type="reset" class="btn " id="b2">Reset</button>
+    </div>
+  </form>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  
+  <!-- intlTelInput js & css -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.15/js/intlTelInput.min.js"
+    integrity="sha512-L3moecKIMM1UtlzYZdiGlge2+bugLObEFLOFscaltlJ82y0my6mTUugiz6fQiSc5MaS7Ce0idFJzabEAl43XHg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.15/js/utils.min.js"
+    integrity="sha512-LFWtoG1tvcDc6wZLVmditfb3DDPT+qd1NN/KJPQFgo//p5jvYiwcJsm4YjxDvao/JfT1xOzFJqzXOZkhLPpUvQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.15/css/intlTelInput.css"
+    integrity="sha512-gxWow8Mo6q6pLa1XH/CcH8JyiSDEtiwJV78E+D+QP0EVasFs8wKXq16G8CLD4CJ2SnonHr4Lm/yY2fSI2+cbmw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <script>
+    // ** Validation/Checks for Appointment Date Input ** //
+    const date = new Date();
+    // console.log("Date: ", date);
+    let tdate = date.getDate();
+    // console.log("tdate: ", tdate);
+    let month = date.getMonth() + 1;
+    // console.log("month +1: ", month);
+
+    if (tdate < 10) {
+      tdate = "0" + tdate;
+    }
+    if (month < 10) {
+      month = "0" + month
+    }
+    const year = date.getUTCFullYear();
+    // console.log("Year: ", year);
+    const minMonth = (tdate[0] == "0" ? "0" + (parseInt(tdate, 10) + 1).toString() : (parseInt(tdate, 10) + 1));
+    const minDate = year + "-" + month + "-" + minMonth;
+    document.getElementById("dateControl").setAttribute('min', minDate);
+    // console.log(minDate)
+
+    // ** Validation/Checks for DOB ** //
+    // check if the DOB is valid and specify minDate maxDate
+    const dobInput = document.getElementById("dob");
+    const minDOB = (year - 150) + "-" + month + "-" + tdate;
+    const today = year + "-" + month + "-" + tdate;
+    dobInput.setAttribute("min", minDOB);
+    dobInput.setAttribute("max", today);
+  </script>
+
+  <script>
+    // ** IntlTelInput Initialization ** //
+    let countryData = {};
+    let currentState = "";
+    let states = [];
+    var input = document.querySelector("#phone");
+    const stateInput = document.querySelector("#inputState");
+    // Load local country and states JSON file
+    let jsonCountryStates = $.getJSON("json-assets/country-states.json");
+
+    var iti = window.intlTelInput(input, {
+      // any initialisation options go here
+      initialCountry: "auto",
+      geoIpLookup: function (callback) {
+        $.get("http://ip-api.com/json"/*https://ipinfo.io*/, function () { }, "jsonp").always(function (resp) {
+          // console.log("Resp:\n", resp);
+          var countryCode = resp && resp.country ? resp.countryCode.toLowerCase() : "in";
+          countryData = resp;
+          // countryData = iti.getSelectedCountryData();// console.log("ContryData obj:\n", countryData);
+          currentState = countryData.region;
+          // console.log("Current state in first ip lookup:\n", currentState);
+          // console.log(jsonCountryStates);// console.log("ContryData obj:\n", countryData);// console.log("Local states (from JSON):");
+          jsonCountryStates.then((key) => {
+            states = key.states[`${countryData.countryCode}`];
+            // console.log("States from first ip lookup:\n", states);
+            changeStates();
+          });
+          // console.log(states);
+          callback(countryCode);
+        });
+      },
+      preferredCountries: ["in"],
+      // autoPlaceholder: "aggressive",// customContainer: "col-md-2",
+    });
+    // console.log(iti);
+    window.iti = iti;
+
+    // ** Dyanamic States for selected country (for phone) ** //
+    input.addEventListener("countrychange", () => {/*changeStates();*/ setCountryState(); });
+
+    function setCountryState() {
+      countryData = iti.getSelectedCountryData();
+      // console.log("CountryData:\n", countryData);// currentState = countryData.region;
+      jsonCountryStates.then((key) => {
+        states = key.states[`${countryData.iso2}`.toUpperCase()];
+        // console.log(states);
+        changeStates();
+      });
+    }
+    function changeStates() {
+      // console.log("CountryChange evt called.. from changeState func");
+      // console.log("ContryData obj:\n", countryData);
+      // console.log("Current state in changeStates func:\n", currentState);
+      if (stateInput.options) {
+        stateInput.innerHTML = "";
+      }
+      states.forEach((item) => {
+        // console.log(`${item.code}: ${item.name}`);// console.log(countryData);
+        if (item.code == currentState) {
+          // console.log("found state..");
+          stateInput.innerHTML = stateInput.innerHTML + `<option selected value=${item.code}>${item.name}</option>`;
+        } else {
+          stateInput.innerHTML = stateInput.innerHTML + `<option value=${item.code}>${item.name}</option>`;
+        }
+      });
+    };
+
+  </script>
+
+  <noscript>
+    <style>
+      #noscript-warning {
+        display: block;
+      }
+    </style>
+  </noscript>
+
+</body>
+
+</html>

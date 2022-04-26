@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab&family=Source+Sans+Pro&display=swap");
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --blue: #238bfa; /*#171791;*/
+  --green: #01edc9; /*#9ad500;*/
+  --myfont: "Source Sans Pro", "Montserrat", "Roboto Slab", serif, sans-serif;
+}
+
+#noscript-warning {
+  display: none;
+  font-family: sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5050;
+  text-align: center;
+  font-weight: bold;
+  font-size: larger;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(358deg 62% 47%);
+  padding: 5px 0;
+  margin-top: 0px;
+  letter-spacing: 0.015rem;
+}
+
+body {
+  background-color: #f5f5f7;
+  font-family: var(--myfont) !important;
+}
+
+.row {
+  margin: 0 auto;
+  width: 55vw;
+  border: 2px solid var(--blue);
+  border-radius: 10px;
+  padding: 25px;
+  background-color: aliceblue;
+  margin-bottom: 50px;
+}
+
+.form-label {
+  color: var(--blue);
+}
+.form-control,
+.form-select {
+  border-width: 2px !important;
+  border-color: var(--blue) !important;
+  border-radius: 10px !important;
+}
+input[type="text"]:focus,
+input[type="password"]:focus,
+.form-control:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+.form-select:focus {
+  border-color: var(--green) !important;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px var(--green) !important;
+  outline: 0 none;
+}
+h1,
+h2 {
+  color: var(--blue);
+  font-weight: bold;
+  text-align: center;
+  font-family: var(--myfont);
+}
+h1 {
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+.btn {
+  border: 2px solid var(--blue);
+  background: var(--blue);
+  color: #fff;
+  outline: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 50%s;
+  text-align: center;
+}
+.btn:hover {
+  color: var(--blue);
+  background: none;
+}
+.form-check {
+  padding-top: 45px;
+  text-align: center;
+}
+.submit {
+  text-align: center;
+  padding: 25px;
+}
+
+@media only screen and (max-width: 998px) {
+  h1 {
+    font-weight: 55%;
+  }
+  .row {
+    max-width: 55%;
+    box-sizing: border-box;
+  }
+  .btn {
+    max-width: 55%;
+  }
+  .btn:hover {
+    color: var(--blue);
+    background: none;
+  }
+}
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-weight: 45%;
+  }
+  .row {
+    max-width: 100%;
+    border: none;
+    padding: 10px;
+  }
+  .btn {
+    max-width: 45%;
+  }
+  .btn:hover {
+    color: var(--blue);
+    background: none;
+  }
+}
+@media only screen and (max-width: 400px) {
+  h1 {
+    font-weight: 35%;
+  }
+  .row {
+    max-width: 100%;
+    border: none;
+    padding: 10%;
+  }
+  .btn {
+    max-width: 35%;
+  }
+  .btn:hover {
+    color: var(--blue);
+    background: none;
+  }
+}
+
+.iti__flag {
+  background-image: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.15/img/flags.png");
+}

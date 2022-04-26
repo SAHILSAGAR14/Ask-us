@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab&family=Source+Sans+Pro&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+:root {
+  --blue: #238bfa; /*#171791;*/
+  --green: #01edc9; /*#9ad500;*/
+  --myfont: "Source Sans Pro", "Montserrat", "Roboto Slab", serif, sans-serif;
+}
+
+/* banner section*/
+.banner {
+  display: flex;
+  background: url("/images/gallery-1.jpg") no-repeat center;
+  height: 90vh;
+  min-height: 500px;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: var(--myfont);
+}
+.banner .container {
+  padding-top: 450px !important;
+}
+
+section {
+  padding-top: 30px;
+}
+/* Doctors*/
+#doctors p {
+  font-family: var(--myfont);
+  text-align: center;
+}
+#doctors .member {
+  margin-bottom: 20px;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0px 0px 5px rgb(1 237 201 / 20%);
+  transition: border-color 1s, box-shadow 0.6s;
+}
+
+#doctors .member .member-img img {
+  position: relative;
+  overflow: hidden;
+  height: 230px !important;
+  width: 320px;
+}
+
+#doctors .member .social {
+  margin-top: 0.75rem;
+  opacity: 0.35;
+  transition: ease-in-out 0.3s;
+  background: rgba(255, 255, 255, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#doctors .member a {
+  transition: color 0.3s;
+  color: var(--blue);
+  margin: 0 10px;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+}
+
+#doctors .member .member-info .social span {
+  display: block;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--blue);
+}
+#doctors .member .member-info .social span:hover {
+  color: var(--green);
+}
+
+#doctors .member a i {
+  line-height: 0;
+}
+
+#doctors .member .social a:hover {
+  color: var(--green);
+}
+
+#doctors .member .social i {
+  font-size: 18px;
+  margin: 0 2px;
+}
+
+#doctors .member .member-info {
+  padding: 25px 15px;
+}
+
+#doctors .member .member-info h4 {
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: #555555;
+}
+
+#doctors .member .member-info span {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: #aaaaaa;
+}
+
+#doctors .member .member-info p {
+  font-style: italic;
+  font-size: 14px;
+  line-height: 26px;
+  color: #777777;
+}
+
+#doctors .member:hover {
+  border-color: rgb(1 237 201 / 100%);
+  box-shadow: 0px 0px 10px 2px rgb(1 237 201 / 100%);
+}
+
+#doctors .member:hover .social {
+  opacity: 1;
+}

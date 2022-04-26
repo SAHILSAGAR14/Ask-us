@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab&family=Source+Sans+Pro&display=swap");
+
+:root {
+  --blue: #238bfa; /*#171791;*/
+  --green: #01edc9; /*#9ad500;*/
+  --myfont: "Source Sans Pro", "Montserrat", "Roboto Slab", serif, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+span {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+.section-head {
+  margin-bottom: 60px;
+}
+.section-head h4 {
+  position: relative;
+  padding: 0;
+  color: var(--blue);
+  line-height: 1;
+  letter-spacing: 0.3px;
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: none;
+  margin-bottom: 30px;
+}
+.section-head h4::before {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: var(--blue);
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.section-head h4 span {
+  font-weight: 700;
+  padding-bottom: 5px;
+  color: #2f2f2f;
+}
+.section-head p {
+  color: #818181;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: center;
+}
+.item {
+  background: #fff;
+  text-align: center;
+  padding: 30px 25px;
+  box-shadow: 0 0 25px #00000012;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  border: 5px solid rgba(0, 0, 0, 0.07);
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+.item:hover {
+  background: var(--blue);
+  cursor: pointer;
+  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+.item:hover .item,
+.item:hover span.icon {
+  background: var(--green);
+  border-radius: 10px;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+.item:hover h4,
+.item:hover p {
+  color: #fff;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+.item .icon {
+  font-size: 40px;
+  margin-bottom: 25px;
+  color: #fff;
+  width: 90px;
+  height: 90px;
+  line-height: 96px;
+  border-radius: 50px;
+}
+.item .feature_box {
+  background: var(--blue);
+  color: var(--green);
+}
+.item:hover .feature_box {
+  color: var(--blue);
+}
+.item p {
+  font-size: 15px;
+  line-height: 26px;
+}
+.item h6 {
+  margin-bottom: 20px;
+  color: #2f2f2f;
+}
+.servicebanner {
+  display: flex;
+  background: url("/images/banner5.jpg") no-repeat center;
+  height: 90vh;
+  min-height: 500px;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: var(--myfont);
+  /* background-blend-mode: darken; */
+}
+.servicebanner .container {
+  padding-top: 300px !important;
+}
